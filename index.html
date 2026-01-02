@@ -2,129 +2,727 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>China BD Deals</title>
+<title>China BD Deals | Premium Chinese Products for Bangladesh</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Exclusive Chinese premium products directly sourced for Bangladesh market. Luxury packaging, gifts, and business solutions.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
+:root {
+    --gold: #D4AF37;
+    --china-red: #DE2910;
+    --bd-green: #006747;
+    --dark: #1a1a1a;
+    --light: #f8f8f8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 body {
- font-family: Arial, sans-serif;
- margin:0;
- background:#f4f4f4;
- color:#222;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    color: #333;
+    line-height: 1.6;
 }
-header {
- background:#0f0f0f;
- padding:25px;
- text-align:center;
+
+/* Premium Header */
+.premium-header {
+    background: linear-gradient(rgba(26, 26, 26, 0.95), rgba(26, 26, 26, 0.98)), 
+                url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1600') center/cover;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
 }
-.logo {
- font-size:32px;
- font-weight:bold;
- color:#d4af37;
- letter-spacing:1px;
+
+.premium-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(to right, var(--china-red), var(--gold), var(--bd-green));
 }
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.flag-icon {
+    font-size: 40px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.flag-icon:nth-child(2) {
+    animation-delay: 1s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.main-logo {
+    font-size: 48px;
+    font-weight: 800;
+    background: linear-gradient(to right, var(--gold), white);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
 .tagline {
- color:#ccc;
- font-size:14px;
+    font-size: 18px;
+    color: #ccc;
+    font-weight: 300;
+    letter-spacing: 3px;
+    margin-top: 10px;
 }
-section {
- background:white;
- max-width:1000px;
- margin:25px auto;
- padding:40px;
- border-radius:12px;
+
+/* Premium Products Section */
+.premium-section {
+    max-width: 1400px;
+    margin: 60px auto;
+    padding: 0 20px;
 }
-h2 {
- color:#d4af37;
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
 }
-.btn {
- display:inline-block;
- padding:12px 22px;
- margin:10px 5px;
- background:#d4af37;
- color:white;
- text-decoration:none;
- border-radius:6px;
- font-weight:bold;
+
+.section-title h2 {
+    font-size: 36px;
+    color: var(--dark);
+    display: inline-block;
+    padding-bottom: 15px;
 }
-footer {
- background:#0f0f0f;
- color:white;
- text-align:center;
- padding:20px;
+
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(to right, var(--china-red), var(--gold));
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
-.float-btn {
- position:fixed;
- right:20px;
- bottom:20px;
- background:#25D366;
- color:white;
- padding:15px 20px;
- border-radius:50px;
- text-decoration:none;
- font-weight:bold;
+
+.section-subtitle {
+    color: #666;
+    font-size: 18px;
+    margin-top: 15px;
+    font-weight: 300;
 }
-.messenger {
- bottom:80px;
- background:#0084FF;
+
+/* Premium Product Grid */
+.premium-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.premium-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+}
+
+.premium-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.premium-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(to right, var(--china-red), var(--gold), var(--bd-green));
+}
+
+.product-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--gold);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    z-index: 2;
+}
+
+.product-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.premium-card:hover .product-image {
+    transform: scale(1.05);
+}
+
+.product-content {
+    padding: 30px;
+}
+
+.product-title {
+    font-size: 22px;
+    color: var(--dark);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.product-description {
+    color: #666;
+    font-size: 15px;
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+.product-price {
+    font-size: 28px;
+    color: var(--china-red);
+    font-weight: 700;
+    margin: 20px 0;
+}
+
+.price-symbol {
+    font-size: 20px;
+    vertical-align: top;
+}
+
+.premium-button {
+    display: block;
+    width: 100%;
+    background: linear-gradient(to right, var(--bd-green), #008055);
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+.premium-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: 0.5s;
+}
+
+.premium-button:hover {
+    background: linear-gradient(to right, #007a4d, #006747);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 103, 71, 0.2);
+}
+
+.premium-button:hover::before {
+    left: 100%;
+}
+
+.premium-button i {
+    margin-right: 10px;
+}
+
+/* Features Section */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin: 80px auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.feature-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+}
+
+.feature-icon {
+    font-size: 48px;
+    color: var(--gold);
+    margin-bottom: 20px;
+}
+
+.feature-title {
+    font-size: 22px;
+    color: var(--dark);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.feature-text {
+    color: #666;
+    font-size: 15px;
+}
+
+/* About Section */
+.about-section {
+    background: linear-gradient(rgba(26, 26, 26, 0.9), rgba(26, 26, 26, 0.95)), 
+                url('https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&w=1600') center/cover;
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+    margin: 80px 0;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-title {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: var(--gold);
+}
+
+.about-text {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #ddd;
+    margin-bottom: 40px;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-size: 16px;
+    color: #ccc;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Premium Footer */
+.premium-footer {
+    background: var(--dark);
+    color: white;
+    padding: 60px 20px 30px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h3 {
+    color: var(--gold);
+    font-size: 20px;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+}
+
+.footer-section p, .footer-section a {
+    color: #bbb;
+    margin-bottom: 15px;
+    display: block;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: var(--gold);
+}
+
+.contact-info i {
+    color: var(--gold);
+    margin-right: 10px;
+    width: 20px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: all 0.3s;
+}
+
+.social-icon:hover {
+    background: var(--gold);
+    transform: translateY(-5px);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: #888;
+    font-size: 14px;
+}
+
+/* Floating Action Buttons */
+.floating-buttons {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    z-index: 1000;
+}
+
+.floating-button {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to right, #25D366, #1DA851);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 15px;
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+    transition: all 0.3s;
+}
+
+.floating-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
+}
+
+.floating-button i {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.floating-button.messenger {
+    background: linear-gradient(to right, #0084FF, #0066CC);
+    box-shadow: 0 10px 25px rgba(0, 132, 255, 0.3);
+}
+
+.floating-button.messenger:hover {
+    box-shadow: 0 15px 30px rgba(0, 132, 255, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main-logo { font-size: 36px; }
+    .section-title h2 { font-size: 28px; }
+    .premium-grid { grid-template-columns: 1fr; }
+    .stats { gap: 30px; }
+    .floating-buttons { right: 20px; bottom: 20px; }
 }
 </style>
 </head>
 
 <body>
 
-<header>
-<div class="logo">China BD Deals</div>
-<div class="tagline">Wholesale & Retail | Direct from China</div>
+<!-- Premium Header -->
+<header class="premium-header">
+    <div class="logo-container">
+        <div class="flag-icon">🇨🇳</div>
+        <div class="main-logo">China BD Deals</div>
+        <div class="flag-icon">🇧🇩</div>
+    </div>
+    <div class="tagline">EXCLUSIVE CHINESE PRODUCTS FOR BANGLADESH</div>
 </header>
 
-<section>
-<h2>Premium Products</h2>
-<p>
-We provide high-quality Bags, Shoes, Sneakers, Cosmetics, and Electronic Gadgets.
-Perfect for personal use and business starters.
-</p>
+<!-- Premium Products Section -->
+<section class="premium-section">
+    <div class="section-title">
+        <h2>Premium Collection</h2>
+        <div class="section-subtitle">Exclusive Chinese products curated for the Bangladesh market</div>
+    </div>
 
-<a class="btn" href="https://wa.me/8617704591427">Order on WhatsApp</a>
-<a class="btn" href="https://m.me/ChinaBDDeals">Message on Facebook</a>
+    <div class="premium-grid">
+        
+        <!-- Product 1 -->
+        <div class="premium-card">
+            <div class="product-badge">BEST SELLER</div>
+            <img src="IMG_3152.png" class="product-image" alt="Luxury Wedding Net Bag">
+            <div class="product-content">
+                <h3 class="product-title">Luxury Wedding Net Bag</h3>
+                <p class="product-description">Premium net bags perfect for wedding favors, jewelry packaging, and special occasion gifts. Made with finest materials.</p>
+                <div class="product-price"><span class="price-symbol">৳</span>120</div>
+                <button class="premium-button" onclick="orderPremium('Luxury Wedding Net Bag - ৳120')">
+                    <i class="fab fa-whatsapp"></i> ORDER VIA WHATSAPP
+                </button>
+            </div>
+        </div>
+        
+        <!-- Product 2 -->
+        <div class="premium-card">
+            <div class="product-badge">PREMIUM</div>
+            <img src="IMG_3155.png" class="product-image" alt="Executive Gift Box">
+            <div class="product-content">
+                <h3 class="product-title">Executive Gift Box</h3>
+                <p class="product-description">Luxury gift packaging for corporate gifting, premium products, and special occasions. Professional finish.</p>
+                <div class="product-price"><span class="price-symbol">৳</span>250</div>
+                <button class="premium-button" onclick="orderPremium('Executive Gift Box - ৳250')">
+                    <i class="fab fa-whatsapp"></i> ORDER VIA WHATSAPP
+                </button>
+            </div>
+        </div>
+        
+        <!-- Product 3 -->
+        <div class="premium-card">
+            <div class="product-badge">CLEAR VIEW</div>
+            <img src="IMG_3157.png" class="product-image" alt="Crystal Display Box">
+            <div class="product-content">
+                <h3 class="product-title">Crystal Display Box</h3>
+                <p class="product-description">Transparent showcase boxes for premium displays, luxury products, and elegant presentations. Crystal clear.</p>
+                <div class="product-price"><span class="price-symbol">৳</span>80</div>
+                <button class="premium-button" onclick="orderPremium('Crystal Display Box - ৳80')">
+                    <i class="fab fa-whatsapp"></i> ORDER VIA WHATSAPP
+                </button>
+            </div>
+        </div>
+        
+        <!-- Product 4 -->
+        <div class="premium-card">
+            <div class="product-badge">CLASSIC</div>
+            <img src="IMG_3153.png" class="product-image" alt="Designer Paper Bag">
+            <div class="product-content">
+                <h3 class="product-title">Designer Paper Bag</h3>
+                <p class="product-description">Elegant paper bags for luxury retail, boutique packaging, and premium gift wrapping. Sophisticated design.</p>
+                <div class="product-price"><span class="price-symbol">৳</span>40</div>
+                <button class="premium-button" onclick="orderPremium('Designer Paper Bag - ৳40')">
+                    <i class="fab fa-whatsapp"></i> ORDER VIA WHATSAPP
+                </button>
+            </div>
+        </div>
+        
+    </div>
 </section>
 
-<section>
-<h2>Wholesale & Reseller Opportunity</h2>
-<p>
-Start your own business with China BD Deals.
-We offer reseller-friendly wholesale pricing with reliable sourcing.
-</p>
-
-<ul>
-<li>Low investment</li>
-<li>High profit margin</li>
-<li>Student & beginner friendly</li>
-</ul>
+<!-- Premium Features -->
+<section class="features">
+    <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-crown"></i></div>
+        <h3 class="feature-title">Premium Quality</h3>
+        <p class="feature-text">Direct from top Chinese manufacturers with strict quality control</p>
+    </div>
+    
+    <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-shipping-fast"></i></div>
+        <h3 class="feature-title">Direct Shipping</h3>
+        <p class="feature-text">China to Bangladesh direct with professional logistics handling</p>
+    </div>
+    
+    <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-handshake"></i></div>
+        <h3 class="feature-title">Trusted Partner</h3>
+        <p class="feature-text">Reliable sourcing and delivery for Bangladeshi businesses</p>
+    </div>
+    
+    <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-headset"></i></div>
+        <h3 class="feature-title">Premium Support</h3>
+        <p class="feature-text">Dedicated WhatsApp support for all your inquiries</p>
+    </div>
 </section>
 
-<section>
-<h2>About Us</h2>
-<p>
-China BD Deals is a student-run business built on honesty, quality, and long-term trust.
-Our goal is to help others start and grow their business with confidence.
-</p>
+<!-- About Section -->
+<section class="about-section">
+    <div class="about-content">
+        <h2 class="about-title">Why Choose China BD Deals?</h2>
+        <p class="about-text">
+            We bridge the gap between premium Chinese manufacturers and the growing Bangladesh market. 
+            Our expertise in sourcing, quality control, and logistics ensures you receive only the best products 
+            at competitive prices. Whether you're a business looking for wholesale or an individual seeking 
+            premium packaging, we deliver excellence.
+        </p>
+        
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Quality Guarantee</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Customer Support</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Happy Clients</div>
+            </div>
+        </div>
+    </div>
 </section>
 
-<section>
-<h2>Contact Us</h2>
-<p>
-Have questions or want to place an order? Contact us anytime.
-</p>
-</section>
-
-<footer>
-<p>© 2026 China BD Deals. All rights reserved.</p>
+<!-- Premium Footer -->
+<footer class="premium-footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>China BD Deals</h3>
+            <p>Premium Chinese products sourced exclusively for the Bangladesh market. Excellence in every delivery.</p>
+            <div class="social-icons">
+                <a href="https://facebook.com/ChinaBDDeals" class="social-icon" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://wa.me/8617704591427" class="social-icon" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="mailto:contact@chinabddeals.com" class="social-icon">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+        
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p class="contact-info">
+                <i class="fab fa-whatsapp"></i> +86 177 0459 1427 (China)
+            </p>
+            <p class="contact-info">
+                <i class="fas fa-clock"></i> 9:00 AM - 11:00 PM (GMT+8)
+            </p>
+            <p class="contact-info">
+                <i class="fas fa-globe"></i> China-based, Bangladesh-focused
+            </p>
+        </div>
+        
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <a href="#products">Premium Products</a>
+            <a href="#wholesale">Wholesale Inquiry</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+    
+    <div class="copyright">
+        &copy; 2024 China BD Deals. All rights reserved. | Premium Chinese Products for Bangladesh
+    </div>
 </footer>
 
-<!-- Floating Buttons -->
-<a class="float-btn" href="https://wa.me/+8617704591427">WhatsApp</a>
-<a class="float-btn messenger" href="https://m.me/ChinaBDDeals">Messenger</a>
+<!-- Floating Action Buttons -->
+<div class="floating-buttons">
+    <a href="https://wa.me/8617704591427" class="floating-button" target="_blank">
+        <i class="fab fa-whatsapp"></i> WhatsApp Order
+    </a>
+    <a href="https://m.me/ChinaBDDeals" class="floating-button messenger" target="_blank">
+        <i class="fab fa-facebook-messenger"></i> Messenger
+    </a>
+</div>
+
+<script>
+// Premium Order Function
+function orderPremium(product) {
+    const phone = "8617704591427";
+    const message = `🌟 Premium Order Inquiry 🌟\n\nProduct: ${product}\n\nI'm interested in this premium product from China BD Deals. Please provide:\n1. Available colors/variants\n2. Minimum order quantity\n3. Delivery timeline\n4. Payment options\n\nThank you!`;
+    window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
+}
+
+// Update copyright year
+document.addEventListener('DOMContentLoaded', function() {
+    const year = new Date().getFullYear();
+    document.querySelector('.copyright').innerHTML = 
+        document.querySelector('.copyright').innerHTML.replace('2024', year);
+    
+    // Add smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if(targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if(targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+});
+
+// Add animation on scroll
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, observerOptions);
+
+// Observe elements for animation
+document.querySelectorAll('.premium-card, .feature-card').forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(30px)';
+    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(card);
+});
+</script>
 
 </body>
-
 </html>
