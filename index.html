@@ -3,565 +3,853 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CHINA BD DEALS - Premium Chinese Products for Bangladesh</title>
+    <title>StyleHub BD | Premium Online Shopping</title>
     <style>
-        /* Premium Luxury Styling */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
         }
-        
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #0a0a0a;
-            color: #f0f0f0;
+            background-color: #f8f9fa;
+            color: #333;
             line-height: 1.6;
         }
-        
-        /* Premium Header */
-        .luxury-header {
-            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
-            padding: 50px 20px;
-            text-align: center;
-            border-bottom: 3px solid #d4af37;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .luxury-header::before {
-            content: '';
-            position: absolute;
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            padding: 1.5rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: sticky;
             top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #d4af37, transparent);
+            z-index: 1000;
         }
-        
-        .brand-title {
-            font-size: 3.5rem;
-            font-weight: 300;
-            letter-spacing: 3px;
-            margin-bottom: 10px;
-            color: #ffffff;
-        }
-        
-        .brand-subtitle {
-            font-size: 1.2rem;
-            color: #d4af37;
-            letter-spacing: 8px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
-        
-        .tagline {
-            font-size: 1.1rem;
-            color: #aaa;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            border-top: 1px solid #333;
-            border-bottom: 1px solid #333;
-        }
-        
-        /* Premium Products Section */
-        .premium-section {
+
+        .container {
+            width: 90%;
             max-width: 1200px;
-            margin: 60px auto;
+            margin: 0 auto;
             padding: 0 20px;
         }
-        
-        .section-title {
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: #ffd700;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 4rem 0;
             text-align: center;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
             font-size: 2.5rem;
-            color: #d4af37;
-            margin-bottom: 50px;
-            font-weight: 300;
-            letter-spacing: 2px;
-            position: relative;
-            padding-bottom: 20px;
+            margin-bottom: 1rem;
         }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 2px;
-            background: #d4af37;
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
         }
-        
-        /* Luxury Product Cards */
-        .product-grid {
+
+        .cta-button {
+            display: inline-block;
+            background: #ff6b6b;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .cta-button:hover {
+            background: #ff5252;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255,107,107,0.3);
+        }
+
+        /* Category Navigation */
+        .category-nav {
+            background: white;
+            padding: 1.5rem 0;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .category-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .cat-btn {
+            padding: 10px 25px;
+            background: white;
+            border: 2px solid #6a11cb;
+            color: #6a11cb;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .cat-btn:hover, .cat-btn.active {
+            background: #6a11cb;
+            color: white;
+        }
+
+        /* Product Sections */
+        .section-title {
+            font-size: 1.8rem;
+            color: #333;
+            margin: 2.5rem 0 1.5rem;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #6a11cb;
+            display: inline-block;
+        }
+
+        .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.8rem;
+            margin-bottom: 3rem;
         }
-        
-        .luxury-card {
-            background: linear-gradient(145deg, #1a1a1a, #222);
+
+        .product-card {
+            background: white;
             border-radius: 15px;
             overflow: hidden;
-            transition: all 0.3s ease;
-            border: 1px solid #333;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s;
             position: relative;
         }
-        
-        .luxury-card:hover {
+
+        .product-card:hover {
             transform: translateY(-10px);
-            border-color: #d4af37;
-            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.1);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
         }
-        
-        .product-image {
+
+        .product-img {
+            height: 200px;
             width: 100%;
-            height: 250px;
-            object-fit: contain;
-            background: #000;
-            padding: 20px;
-            border-bottom: 1px solid #333;
+            object-fit: cover;
         }
-        
-        .product-content {
-            padding: 30px;
+
+        .product-info {
+            padding: 1.2rem;
         }
-        
-        .product-name {
-            font-size: 1.8rem;
-            color: #ffffff;
-            margin-bottom: 15px;
-            font-weight: 300;
+
+        .product-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+            font-size: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
-        
-        .product-features {
-            list-style: none;
-            margin-bottom: 25px;
+
+        .product-price {
+            color: #ff6b6b;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
         }
-        
-        .product-features li {
-            padding: 8px 0;
-            color: #aaa;
-            position: relative;
-            padding-left: 25px;
-        }
-        
-        .product-features li::before {
-            content: '✦';
-            color: #d4af37;
-            position: absolute;
-            left: 0;
-        }
-        
-        .product-description {
+
+        .product-original-price {
             color: #888;
-            font-size: 0.95rem;
-            line-height: 1.8;
-            margin-bottom: 25px;
-            border-top: 1px solid #333;
-            padding-top: 20px;
+            text-decoration: line-through;
+            font-size: 0.9rem;
+            margin-left: 8px;
         }
-        
-        /* Premium Buttons */
-        .whatsapp-btn {
-            display: block;
+
+        .product-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-bottom: 15px;
+        }
+
+        .tag {
+            background: #e7f3ff;
+            color: #2575fc;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .tag.sale {
+            background: #ffeaea;
+            color: #ff6b6b;
+        }
+
+        .tag.new {
+            background: #e7ffea;
+            color: #2ecc71;
+        }
+
+        .btn-add-to-cart {
             width: 100%;
-            padding: 15px;
-            background: linear-gradient(135deg, #25D366, #128C7E);
+            padding: 10px;
+            background: #6a11cb;
             color: white;
             border: none;
             border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 500;
             cursor: pointer;
-            transition: all 0.3s ease;
-            text-align: center;
-            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
         }
-        
-        .whatsapp-btn:hover {
-            transform: scale(1.02);
-            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
+
+        .btn-add-to-cart:hover {
+            background: #2575fc;
         }
-        
-        /* Floating Action Buttons */
-        .floating-buttons {
-            position: fixed;
-            right: 30px;
-            bottom: 30px;
-            z-index: 1000;
+
+        /* Tables */
+        .table-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin-bottom: 3rem;
         }
-        
-        .fab {
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+        }
+
+        .data-table th, .data-table td {
+            border: 1px solid #e0e0e0;
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        .data-table th {
+            background: #f8f9fa;
+            color: #6a11cb;
+            font-weight: 600;
+        }
+
+        .data-table tr:hover {
+            background: #f9f9ff;
+        }
+
+        /* Footer */
+        footer {
+            background: #222;
+            color: white;
+            padding: 3rem 0 1.5rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.2rem;
+            color: #ffd700;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #bbb;
+            margin-bottom: 10px;
             display: block;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            margin: 15px 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
             text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: color 0.3s;
         }
-        
-        .fab:hover {
-            transform: scale(1.1);
+
+        .footer-section a:hover {
+            color: #ffd700;
         }
-        
-        .fab-whatsapp {
-            background: #25D366;
-        }
-        
-        .fab-messenger {
-            background: #0084FF;
-        }
-        
-        /* Special Offer Banner */
-        .offer-banner {
-            background: linear-gradient(135deg, #d4af37, #b8941f);
-            color: white;
-            padding: 20px;
-            text-align: center;
-            margin: 20px auto;
-            max-width: 1200px;
-            border-radius: 10px;
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.02); }
-            100% { transform: scale(1); }
-        }
-        
-        /* Luxury Footer */
-        .luxury-footer {
-            background: #111;
-            padding: 60px 20px;
-            text-align: center;
-            border-top: 1px solid #333;
-            margin-top: 80px;
-        }
-        
-        .footer-logo {
-            font-size: 2.5rem;
-            color: #d4af37;
-            margin-bottom: 20px;
-            letter-spacing: 2px;
-        }
-        
-        .contact-info {
-            color: #888;
-            margin: 30px 0;
-        }
-        
-        .contact-info p {
-            margin: 10px 0;
-        }
-        
+
         .copyright {
-            color: #666;
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid #444;
+            color: #bbb;
             font-size: 0.9rem;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #333;
         }
-        
-        /* Responsive Design */
+
+        /* Responsive */
         @media (max-width: 768px) {
-            .brand-title {
-                font-size: 2.5rem;
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
             }
             
-            .brand-subtitle {
-                font-size: 1rem;
-                letter-spacing: 4px;
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
             }
             
-            .product-grid {
-                grid-template-columns: 1fr;
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             }
             
-            .floating-buttons {
-                right: 20px;
-                bottom: 20px;
-            }
-            
-            .fab {
-                width: 50px;
-                height: 50px;
-                font-size: 1.2rem;
+            .hero h1 {
+                font-size: 2rem;
             }
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Special Offer Banner -->
-    <div class="offer-banner">
-        <h3 style="margin: 0;">🎁 LAUNCH SPECIAL: First 10 Orders Get 25% OFF!</h3>
-        <p style="margin: 10px 0; opacity: 0.9;">Use code: PREMIUM25 at checkout</p>
-    </div>
-
-    <!-- Premium Luxury Header -->
-    <header class="luxury-header">
-        <h1 class="brand-title">CHINA BD DEALS</h1>
-        <div class="brand-subtitle">PREMIUM CHINESE PRODUCTS FOR BANGLADESH</div>
-        <p class="tagline">Your trusted source for premium electronics, sneakers, gift packaging, and exclusive Chinese products</p>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-crown"></i>
+                Style<span>Hub</span> BD
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#fashion">Fashion</a></li>
+                    <li><a href="#cosmetics">Cosmetics</a></li>
+                    <li><a href="#electronics">Electronics</a></li>
+                    <li><a href="#home-appliances">Home</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <!-- Premium Products Section -->
-    <section class="premium-section">
-        <h2 class="section-title">Premium Collection</h2>
-        
-        <div class="product-grid">
-            
-            <!-- Product 1: Premium Electronics -->
-            <div class="luxury-card">
-                <div class="product-image" style="background: linear-gradient(135deg, #1a1a1a, #2a2a2a); display: flex; align-items: center; justify-content: center;">
-                    <div style="text-align: center; color: #d4af37;">
-                        <div style="font-size: 3rem; margin-bottom: 10px;">📱</div>
-                        <h3 style="margin: 0; color: white;">Premium Electronic Gadgets</h3>
-                        <p style="color: #aaa; margin-top: 5px;">Latest Tech from China</p>
-                    </div>
-                </div>
-                <div class="product-content">
-                    <h3 class="product-name">Premium Electronics Collection</h3>
-                    <ul class="product-features">
-                        <li>Latest Chinese Technology</li>
-                        <li>Smartphones & Accessories</li>
-                        <li>Wearable Gadgets</li>
-                        <li>Home Electronics</li>
-                        <li>1 Year Warranty</li>
-                    </ul>
-                    <p class="product-description">
-                        Source the latest electronic gadgets directly from Chinese manufacturers. 
-                        We provide authentic products with quality assurance and competitive pricing 
-                        for the Bangladesh market.
-                    </p>
-                    <a href="https://wa.me/8617704591427?text=Hello%20China%20BD%20Deals!%20I'm%20interested%20in%20Premium%20Electronics%20Collection" 
-                       class="whatsapp-btn" target="_blank">
-                        Inquire About Electronics
-                    </a>
-                </div>
-            </div>
-
-            <!-- Product 2: Premium Sneakers -->
-            <div class="luxury-card">
-                <div class="product-image" style="background: linear-gradient(135deg, #1a1a1a, #2a2a2a); display: flex; align-items: center; justify-content: center;">
-                    <div style="text-align: center; color: #d4af37;">
-                        <div style="font-size: 3rem; margin-bottom: 10px;">👟</div>
-                        <h3 style="margin: 0; color: white;">Premium Sneakers</h3>
-                        <p style="color: #aaa; margin-top: 5px;">Boys & Girls Collection</p>
-                    </div>
-                </div>
-                <div class="product-content">
-                    <h3 class="product-name">Premium Sneakers Collection</h3>
-                    <ul class="product-features">
-                        <li>Latest Fashion Designs</li>
-                        <li>High Quality Materials</li>
-                        <li>Comfort & Durability</li>
-                        <li>All Sizes Available</li>
-                        <li>Trendy Colors & Styles</li>
-                    </ul>
-                    <p class="product-description">
-                        Trendy sneakers for boys and girls with the latest fashion designs from China. 
-                        Perfect for casual wear, sports, and making fashion statements. Quality materials 
-                        ensure comfort and durability.
-                    </p>
-                    <a href="https://wa.me/8617704591427?text=Hello%20China%20BD%20Deals!%20I'm%20interested%20in%20Premium%20Sneakers%20Collection" 
-                       class="whatsapp-btn" target="_blank">
-                        Inquire About Sneakers
-                    </a>
-                </div>
-            </div>
-
-            <!-- Product 3: Gift Packaging -->
-            <div class="luxury-card">
-                <div class="product-image" style="background: linear-gradient(135deg, #1a1a1a, #2a2a2a); display: flex; align-items: center; justify-content: center;">
-                    <div style="text-align: center; color: #d4af37;">
-                        <div style="font-size: 3rem; margin-bottom: 10px;">🎁</div>
-                        <h3 style="margin: 0; color: white;">Gift Packaging</h3>
-                        <p style="color: #aaa; margin-top: 5px;">Premium Packaging Solutions</p>
-                    </div>
-                </div>
-                <div class="product-content">
-                    <h3 class="product-name">Premium Gift Packaging</h3>
-                    <ul class="product-features">
-                        <li>Executive Gift Boxes</li>
-                        <li>Wedding Collections</li>
-                        <li>Corporate Packaging</li>
-                        <li>Custom Designs</li>
-                        <li>Bulk Order Discounts</li>
-                    </ul>
-                    <p class="product-description">
-                        Premium packaging solutions for all occasions. From wedding favors to corporate gifting, 
-                        we provide elegant packaging that makes your gifts stand out. Custom branding available 
-                        for businesses.
-                    </p>
-                    <a href="https://wa.me/8617704591427?text=Hello%20China%20BD%20Deals!%20I'm%20interested%20in%20Premium%20Gift%20Packaging" 
-                       class="whatsapp-btn" target="_blank">
-                        Inquire About Packaging
-                    </a>
-                </div>
-            </div>
-
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Premium Shopping Experience in Bangladesh</h1>
+            <p>Discover the latest fashion trends, beauty products, electronics, and home appliances at unbeatable prices. Free delivery across Dhaka, Chittagong, and Sylhet.</p>
+            <a href="#fashion" class="cta-button">Shop Now <i class="fas fa-arrow-right"></i></a>
         </div>
     </section>
 
-    <!-- Product Categories -->
-    <section class="premium-section">
-        <h2 class="section-title">Our Product Categories</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-top: 40px;">
-            
-            <div style="text-align: center; padding: 30px; background: linear-gradient(145deg, #1a1a1a, #222); border-radius: 15px; border: 1px solid #333; transition: all 0.3s ease;">
-                <div style="font-size: 3rem; margin-bottom: 20px; color: #d4af37;">📱</div>
-                <h3 style="color: #d4af37; margin-bottom: 15px;">Electronics</h3>
-                <p style="color: #aaa; line-height: 1.6;">Smartphones, gadgets, accessories, and latest tech from Chinese manufacturers</p>
-                <a href="https://wa.me/8617704591427?text=Hello%20China%20BD%20Deals!%20I'm%20interested%20in%20Electronics" 
-                   style="display: inline-block; margin-top: 20px; padding: 10px 25px; background: #333; color: white; text-decoration: none; border-radius: 5px;">
-                    Browse Electronics
-                </a>
+    <!-- Category Navigation -->
+    <div class="category-nav">
+        <div class="container">
+            <div class="category-buttons">
+                <button class="cat-btn active" onclick="filterProducts('all')">All Products</button>
+                <button class="cat-btn" onclick="filterProducts('fashion')">Fashion</button>
+                <button class="cat-btn" onclick="filterProducts('cosmetics')">Cosmetics</button>
+                <button class="cat-btn" onclick="filterProducts('electronics')">Electronics</button>
+                <button class="cat-btn" onclick="filterProducts('home')">Home & Living</button>
+                <button class="cat-btn" onclick="filterProducts('shoes')">Shoes</button>
             </div>
-            
-            <div style="text-align: center; padding: 30px; background: linear-gradient(145deg, #1a1a1a, #222); border-radius: 15px; border: 1px solid #333; transition: all 0.3s ease;">
-                <div style="font-size: 3rem; margin-bottom: 20px; color: #d4af37;">👟</div>
-                <h3 style="color: #d4af37; margin-bottom: 15px;">Fashion & Sneakers</h3>
-                <p style="color: #aaa; line-height: 1.6;">Trendy sneakers, footwear, and fashion items for all ages and styles</p>
-                <a href="https://wa.me/8617704591427?text=Hello%20China%20BD%20Deals!%20I'm%20interested%20in%20Sneakers%20%26%20Fashion" 
-                   style="display: inline-block; margin-top: 20px; padding: 10px 25px; background: #333; color: white; text-decoration: none; border-radius: 5px;">
-                    Browse Sneakers
-                </a>
-            </div>
-            
-            <div style="text-align: center; padding: 30px; background: linear-gradient(145deg, #1a1a1a, #222); border-radius: 15px; border: 1px solid #333; transition: all 0.3s ease;">
-                <div style="font-size: 3rem; margin-bottom: 20px; color: #d4af37;">🎁</div>
-                <h3 style="color: #d4af37; margin-bottom: 15px;">Gift Packaging</h3>
-                <p style="color: #aaa; line-height: 1.6;">Premium packaging solutions for weddings, corporate events, and retail</p>
-                <a href="https://wa.me/8617704591427?text=Hello%20China%20BD%20Deals!%20I'm%20interested%20in%20Gift%20Packaging" 
-                   style="display: inline-block; margin-top: 20px; padding: 10px 25px; background: #333; color: white; text-decoration: none; border-radius: 5px;">
-                    Browse Packaging
-                </a>
-            </div>
-            
-            <div style="text-align: center; padding: 30px; background: linear-gradient(145deg, #1a1a1a, #222); border-radius: 15px; border: 1px solid #333; transition: all 0.3s ease;">
-                <div style="font-size: 3rem; margin-bottom: 20px; color: #d4af37;">🛍️</div>
-                <h3 style="color: #d4af37; margin-bottom: 15px;">More Products</h3>
-                <p style="color: #aaa; line-height: 1.6;">Various Chinese products including home goods, accessories, and unique items</p>
-                <a href="https://wa.me/8617704591427?text=Hello%20China%20BD%20Deals!%20I'm%20interested%20in%20other%20products" 
-                   style="display: inline-block; margin-top: 20px; padding: 10px 25px; background: #333; color: white; text-decoration: none; border-radius: 5px;">
-                    Browse All Products
-                </a>
-            </div>
-            
         </div>
-    </section>
+    </div>
 
-    <!-- Business Opportunity Section -->
-    <section class="premium-section">
-        <h2 class="section-title">Business Partnership</h2>
-        <div class="luxury-card" style="max-width: 800px; margin: 0 auto;">
-            <div class="product-content">
-                <h3 class="product-name" style="text-align: center;">Wholesale & Reseller Program</h3>
-                <ul class="product-features">
-                    <li><strong>Exclusive Pricing:</strong> Special rates for bulk orders</li>
-                    <li><strong>Multiple Categories:</strong> Electronics, Fashion, Packaging</li>
-                    <li><strong>Brand Partnership:</strong> Co-branding opportunities</li>
-                    <li><strong>Priority Support:</strong> Dedicated account manager</li>
-                    <li><strong>Market Insights:</strong> Trending product recommendations</li>
-                </ul>
-                <p class="product-description" style="text-align: center;">
-                    Partner with China BD Deals to bring premium Chinese products to your customers. 
-                    Whether you're a retailer, online seller, or business looking for corporate gifting solutions, 
-                    we offer tailored solutions across multiple product categories.
-                </p>
-                <a href="https://wa.me/8617704591427?text=Hello%20China%20BD%20Deals!%20I'm%20interested%20in%20Wholesale%20Partnership%20across%20multiple%20categories" 
-                   class="whatsapp-btn" style="background: linear-gradient(135deg, #d4af37, #b8941f);" target="_blank">
-                    Discuss Partnership
-                </a>
+    <div class="container">
+        <!-- Fashion Section -->
+        <h2 class="section-title" id="fashion">👗 Trending Fashion in Bangladesh</h2>
+        <div class="products-grid">
+            <div class="product-card" data-category="fashion">
+                <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Traditional Saree" class="product-img">
+                <div class="product-info">
+                    <div class="product-tags">
+                        <span class="tag new">New Arrival</span>
+                        <span class="tag">Premium</span>
+                    </div>
+                    <h3 class="product-title">Jamdani Silk Saree with Zari Work</h3>
+                    <div class="product-price">৳ 3,499 <span class="product-original-price">৳ 5,999</span></div>
+                    <p class="product-desc">Handwoven traditional Bangladeshi saree with premium zari border.</p>
+                    <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="fashion">
+                <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Men's Kurta" class="product-img">
+                <div class="product-info">
+                    <div class="product-tags">
+                        <span class="tag sale">Eid Sale</span>
+                        <span class="tag">Cotton</span>
+                    </div>
+                    <h3 class="product-title">Men's Premium Cotton Kurta Pajama Set</h3>
+                    <div class="product-price">৳ 1,899 <span class="product-original-price">৳ 2,799</span></div>
+                    <p class="product-desc">Comfortable cotton kurta with matching pajama, perfect for festivals.</p>
+                    <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="fashion">
+                <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Women's Dress" class="product-img">
+                <div class="product-info">
+                    <div class="product-tags">
+                        <span class="tag new">Trending</span>
+                        <span class="tag">Casual</span>
+                    </div>
+                    <h3 class="product-title">Women's Floral Print Maxi Dress</h3>
+                    <div class="product-price">৳ 1,299 <span class="product-original-price">৳ 2,199</span></div>
+                    <p class="product-desc">Lightweight summer dress with floral pattern, perfect for Bangladeshi weather.</p>
+                    <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="fashion">
+                <img src="https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Kids Wear" class="product-img">
+                <div class="product-info">
+                    <div class="product-tags">
+                        <span class="tag">Kids</span>
+                        <span class="tag">Comfort</span>
+                    </div>
+                    <h3 class="product-title">Kids Traditional Dress Set with Cap</h3>
+                    <div class="product-price">৳ 999 <span class="product-original-price">৳ 1,599</span></div>
+                    <p class="product-desc">Adorable traditional dress set for children, available in multiple colors.</p>
+                    <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                </div>
             </div>
         </div>
-    </section>
 
-    <!-- Luxury Footer -->
-    <footer class="luxury-footer">
-        <div class="footer-logo">CHINA BD DEALS</div>
-        <div class="contact-info">
-            <p>📱 WhatsApp: 017704591427 | 8617704591427</p>
-            <p>⏰ Business Hours: 10:00 AM - 10:00 PM (BDT & CST)</p>
-            <p>🚚 Free Delivery in Dhaka | Nationwide Shipping Available</p>
-            <p>💳 Payment: bKash | Nagad | Bank Transfer | Cash on Delivery</p>
-            <p>🌍 Sourcing: Direct from Guangzhou, China</p>
+        <!-- Cosmetics Section -->
+        <h2 class="section-title" id="cosmetics">💄 Premium Cosmetics & Beauty</h2>
+        <div class="products-grid">
+            <div class="product-card" data-category="cosmetics">
+                <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Lipstick" class="product-img">
+                <div class="product-info">
+                    <div class="product-tags">
+                        <span class="tag new">Bestseller</span>
+                        <span class="tag">Matte</span>
+                    </div>
+                    <h3 class="product-title">Matte Liquid Lipstick Set (6 Colors)</h3>
+                    <div class="product-price">৳ 899 <span class="product-original-price">৳ 1,499</span></div>
+                    <p class="product-desc">Long-lasting matte lipstick set with 6 popular shades for Bangladeshi skin tones.</p>
+                    <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="cosmetics">
+                <img src="https://images.unsplash.com/photo-1556228578-9c360e1d8d34?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Face Cream" class="product-img">
+                <div class="product-info">
+                    <div class="product-tags">
+                        <span class="tag">Whitening</span>
+                        <span class="tag">SPF 30</span>
+                    </div>
+                    <h3 class="product-title">Fairness Cream with SPF 30 & Vitamin C</h3>
+                    <div class="product-price">৳ 649 <span class="product-original-price">৳ 999</span></div>
+                    <p class="product-desc">Daily use fairness cream with sun protection for humid Bangladeshi climate.</p>
+                    <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="cosmetics">
+                <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Perfume" class="product-img">
+                <div class="product-info">
+                    <div class="product-tags">
+                        <span class="tag new">Luxury</span>
+                        <span class="tag">Long Lasting</span>
+                    </div>
+                    <h3 class="product-title">Premium Attar Perfume Collection (3 Bottles)</h3>
+                    <div class="product-price">৳ 1,299 <span class="product-original-price">৳ 2,299</span></div>
+                    <p class="product-desc">Traditional attar perfumes with floral and musky scents for men and women.</p>
+                    <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="cosmetics">
+                <img src="https://images.unsplash.com/photo-1591085686350-798c0f9faa7f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Hair Care" class="product-img">
+                <div class="product-info">
+                    <div class="product-tags">
+                        <span class="tag">Hair Care</span>
+                        <span class="tag">Anti-Dandruff</span>
+                    </div>
+                    <h3 class="product-title">Onion Hair Oil & Shampoo Combo Pack</h3>
+                    <div class="product-price">৳ 799 <span class="product-original-price">৳ 1,299</span></div>
+                    <p class="product-desc">Hair growth treatment with onion extract, reduces hair fall and dandruff.</p>
+                    <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                </div>
+            </div>
         </div>
-        <div class="copyright">
-            © 2024 CHINA BD DEALS. All rights reserved.<br>
-            Premium Chinese Products for the Bangladesh Market | Multi-Category Supplier
+
+        <!-- Electronics Section -->
+        <h2 class="section-title" id="electronics">📱 Electronics & Gadgets</h2>
+        <div class="products-grid">
+            <div class="product-card" data-category="electronics">
+                <img src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Smartphone" class="product-img">
+                <div class="product-info">
+                    <div class="product-tags">
+                        <span class="tag new">Latest</span>
+                        <span class="tag">128GB</span>
+                    </div>
+                    <h3 class="product-title">Xiaomi Smartphone 8GB RAM 128GB ROM</h3>
+                    <div class="product-price">৳ 22,999 <span class="product-original-price">৳ 28,999</span></div>
+                    <p class="product-desc">48MP camera, 5000mAh battery, perfect for Bangladeshi users.</p>
+                    <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="electronics">
+                <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Smart Watch" class="product-img">
+                <div class="product-info">
+                    <div class="product-tags">
+                        <span class="tag sale">Sale</span>
+                        <span class="tag">Fitness</span>
+                    </div>
+                    <h3 class="product-title">Amazfit Smart Watch with Blood Oxygen Monitor</h3>
+                    <div class="product-price">৳ 4,499 <span class="product-original-price">৳ 6,999</span></div>
+                    <p class="product-desc">Health tracking, sleep monitoring, 10-day battery life.</p>
+                    <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="electronics">
+                <img src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Power Bank" class="product-img">
+                <div class="product-info">
+                    <div class="product-tags">
+                        <span class="tag">Fast Charging</span>
+                        <span class="tag">20000mAh</span>
+                    </div>
+                    <h3 class="product-title">20000mAh Power Bank with 22.5W Fast Charge</h3>
+                    <div class="product-price">৳ 1,899 <span class="product-original-price">৳ 2,899</span></div>
+                    <p class="product-desc">Essential for Bangladesh's frequent power outages, charges 4 devices simultaneously.</p>
+                    <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="electronics">
+                <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Earphones" class="product-img">
+                <div class="product-info">
+                    <div class="product-tags">
+                        <span class="tag new">Wireless</span>
+                        <span class="tag">Noise Cancelling</span>
+                    </div>
+                    <h3 class="product-title">Wireless Bluetooth Earphones with ANC</h3>
+                    <div class="product-price">৳ 2,299 <span class="product-original-price">৳ 3,999</span></div>
+                    <p class="product-desc">Active noise cancellation, 30hrs battery, perfect for noisy Bangladeshi streets.</p>
+                    <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Data Table -->
+        <div class="table-section">
+            <h2 class="section-title">📊 Product Comparison Table</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Product Name</th>
+                        <th>Category</th>
+                        <th>Original Price</th>
+                        <th>Discounted Price</th>
+                        <th>Sales</th>
+                        <th>Rating</th>
+                        <th>Tags</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Jamdani Silk Saree</td>
+                        <td>Fashion</td>
+                        <td>৳ 5,999</td>
+                        <td>৳ 3,499</td>
+                        <td>1,240 sold</td>
+                        <td>4.8 ★</td>
+                        <td>Premium, Traditional</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Men's Cotton Kurta Set</td>
+                        <td>Fashion</td>
+                        <td>৳ 2,799</td>
+                        <td>৳ 1,899</td>
+                        <td>890 sold</td>
+                        <td>4.7 ★</td>
+                        <td>Eid Sale, Cotton</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Matte Lipstick Set</td>
+                        <td>Cosmetics</td>
+                        <td>৳ 1,499</td>
+                        <td>৳ 899</td>
+                        <td>2,150 sold</td>
+                        <td>4.9 ★</td>
+                        <td>Bestseller, Long-lasting</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Fairness Cream with SPF</td>
+                        <td>Cosmetics</td>
+                        <td>৳ 999</td>
+                        <td>৳ 649</td>
+                        <td>3,420 sold</td>
+                        <td>4.5 ★</td>
+                        <td>Whitening, SPF 30</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Xiaomi Smartphone 128GB</td>
+                        <td>Electronics</td>
+                        <td>৳ 28,999</td>
+                        <td>৳ 22,999</td>
+                        <td>540 sold</td>
+                        <td>4.6 ★</td>
+                        <td>Latest, 48MP Camera</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Amazfit Smart Watch</td>
+                        <td>Electronics</td>
+                        <td>৳ 6,999</td>
+                        <td>৳ 4,499</td>
+                        <td>1,120 sold</td>
+                        <td>4.7 ★</td>
+                        <td>Fitness, Health Tracking</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>20000mAh Power Bank</td>
+                        <td>Electronics</td>
+                        <td>৳ 2,899</td>
+                        <td>৳ 1,899</td>
+                        <td>3,890 sold</td>
+                        <td>4.8 ★</td>
+                        <td>Fast Charging, Essential</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Onion Hair Oil Combo</td>
+                        <td>Cosmetics</td>
+                        <td>৳ 1,299</td>
+                        <td>৳ 799</td>
+                        <td>1,750 sold</td>
+                        <td>4.4 ★</td>
+                        <td>Hair Growth, Anti-Dandruff</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Best Sellers in Bangladesh -->
+        <h2 class="section-title">🔥 Best Sellers in Bangladesh</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Mosquito Repellent" class="product-img">
+                <div class="product-info">
+                    <div class="product-tags">
+                        <span class="tag sale">Essential</span>
+                        <span class="tag">Mosquito</span>
+                    </div>
+                    <h3 class="product-title">Electric Mosquito Repellent & Killer</h3>
+                    <div class="product-price">৳ 1,099 <span class="product-original-price">৳ 1,799</span></div>
+                    <p class="product-desc">Essential for Bangladeshi homes, protects from dengue and malaria.</p>
+                    <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1625772452859-1c03d5bf1137?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Rice Cooker" class="product-img">
+                <div class="product-info">
+                    <div class="product-tags">
+                        <span class="tag">Kitchen</span>
+                        <span class="tag">Automatic</span>
+                    </div>
+                    <h3 class="product-title">Automatic Rice Cooker 1.8L (Local Use)</h3>
+                    <div class="product-price">৳ 2,499 <span class="product-original-price">৳ 3,299</span></div>
+                    <p class="product-desc">Perfect for Bangladeshi households, cooks rice and steam vegetables.</p>
+                    <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1595341888016-a392ef81b7de?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Prayer Mat" class="product-img">
+                <div class="product-info">
+                    <div class="product-tags">
+                        <span class="tag">Religious</span>
+                        <span class="tag">Premium</span>
+                    </div>
+                    <h3 class="product-title">Premium Islamic Prayer Mat with Compass</h3>
+                    <div class="product-price">৳ 799 <span class="product-original-price">৳ 1,299</span></div>
+                    <p class="product-desc">High-quality prayer mat with direction compass, popular in Bangladesh.</p>
+                    <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Tea Set" class="product-img">
+                <div class="product-info">
+                    <div class="product-tags">
+                        <span class="tag new">Traditional</span>
+                        <span class="tag">Ceramic</span>
+                    </div>
+                    <h3 class="product-title">Bangladeshi Traditional Ceramic Tea Set</h3>
+                    <div class="product-price">৳ 1,599 <span class="product-original-price">৳ 2,199</span></div>
+                    <p class="product-desc">Beautiful hand-painted tea set, perfect for Bangladeshi hospitality.</p>
+                    <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>StyleHub BD</h3>
+                    <p>Your premium online shopping destination in Bangladesh. We offer quality products with reliable delivery across the country.</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Gulshan, Dhaka, Bangladesh</p>
+                    <p><i class="fas fa-phone"></i> +880 1711-XXXXXX</p>
+                    <p><i class="fas fa-envelope"></i> support@stylehub-bd.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="#home">Home</a>
+                    <a href="#fashion">Fashion</a>
+                    <a href="#cosmetics">Cosmetics</a>
+                    <a href="#electronics">Electronics</a>
+                    <a href="#home-appliances">Home Appliances</a>
+                    <a href="#">Track Order</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <a href="#">FAQ</a>
+                    <a href="#">Shipping Policy</a>
+                    <a href="#">Return & Exchange</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">Contact Us</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div style="display: flex; gap: 15px; font-size: 1.5rem; margin-top: 10px;">
+                        <a href="#" style="color: #3b5998;"><i class="fab fa-facebook"></i></a>
+                        <a href="#" style="color: #1DA1F2;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="color: #E1306C;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="color: #FF0000;"><i class="fab fa-youtube"></i></a>
+                        <a href="#" style="color: #25D366;"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                    <p style="margin-top: 20px;">Payment Methods:</p>
+                    <div style="display: flex; gap: 10px; font-size: 1.8rem;">
+                        <i class="fab fa-cc-visa" style="color: #1a1f71;"></i>
+                        <i class="fab fa-cc-mastercard" style="color: #eb001b;"></i>
+                        <i class="fab fa-cc-paypal" style="color: #003087;"></i>
+                        <i class="fas fa-money-bill-wave" style="color: #28a745;"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 StyleHub BD. All rights reserved. | Designed for Bangladesh Market
+            </div>
         </div>
     </footer>
 
-    <!-- Floating Action Buttons -->
-    <div class="floating-buttons">
-        <a href="https://wa.me/8617704591427" class="fab fab-whatsapp" target="_blank" title="Chat on WhatsApp">
-            💬
-        </a>
-        <a href="https://m.me/ChinaBDDeals" class="fab fab-messenger" target="_blank" title="Message on Messenger">
-            💭
-        </a>
-    </div>
-
     <script>
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+        // Category Filtering Function
+        function filterProducts(category) {
+            const products = document.querySelectorAll('.product-card');
+            const buttons = document.querySelectorAll('.cat-btn');
+            
+            // Update active button
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if(btn.textContent.toLowerCase().includes(category) || (category === 'all' && btn.textContent.includes('All Products'))) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // Show/hide products
+            products.forEach(product => {
+                if(category === 'all') {
+                    product.style.display = 'block';
+                } else if(product.dataset.category === category) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        }
+
+        // Add to Cart Functionality
+        document.querySelectorAll('.btn-add-to-cart').forEach(button => {
+            button.addEventListener('click', function() {
+                const productTitle = this.closest('.product-card').querySelector('.product-title').textContent;
+                alert(`"${productTitle}" has been added to your cart!`);
+                
+                // Add animation
+                this.innerHTML = '<i class="fas fa-check"></i> Added!';
+                this.style.background = '#2ecc71';
+                
+                setTimeout(() => {
+                    this.innerHTML = '<i class="fas fa-shopping-cart"></i> Add to Cart';
+                    this.style.background = '#6a11cb';
+                }, 2000);
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
-                if(targetId !== '#') {
-                    const targetElement = document.querySelector(targetId);
-                    if(targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                    }
-                }
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 100,
+                    behavior: 'smooth'
+                });
             });
-        });
-
-        // Add animation to cards on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if(entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe all luxury cards
-        document.querySelectorAll('.luxury-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(card);
-        });
-
-        // Observe category cards
-        document.querySelectorAll('.premium-section > div > div').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(card);
         });
     </script>
 </body>
