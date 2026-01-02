@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StyleHub BD | Premium Online Shopping</title>
+    <title>China BD Deals | China Products in Bangladesh</title>
     <style>
         * {
             margin: 0;
@@ -20,7 +20,7 @@
 
         /* Header */
         header {
-            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            background: linear-gradient(135deg, #d32f2f 0%, #f44336 100%);
             color: white;
             padding: 1.5rem 0;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -54,6 +54,21 @@
             color: #ffd700;
         }
 
+        .china-flag {
+            color: #ff0000;
+            animation: pulse 2s infinite;
+        }
+
+        .bd-flag {
+            color: #006a4e;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
         nav ul {
             display: flex;
             list-style: none;
@@ -76,7 +91,7 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
             background-size: cover;
             background-position: center;
             color: white;
@@ -91,6 +106,11 @@
             margin-bottom: 1rem;
         }
 
+        .hero h1 i {
+            color: #ffd700;
+            margin: 0 10px;
+        }
+
         .hero p {
             font-size: 1.2rem;
             max-width: 700px;
@@ -100,7 +120,7 @@
 
         .cta-button {
             display: inline-block;
-            background: #ff6b6b;
+            background: #d32f2f;
             color: white;
             padding: 12px 30px;
             border-radius: 30px;
@@ -113,9 +133,9 @@
         }
 
         .cta-button:hover {
-            background: #ff5252;
+            background: #b71c1c;
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(255,107,107,0.3);
+            box-shadow: 0 5px 15px rgba(211,47,47,0.3);
         }
 
         /* Category Navigation */
@@ -137,8 +157,8 @@
         .cat-btn {
             padding: 10px 25px;
             background: white;
-            border: 2px solid #6a11cb;
-            color: #6a11cb;
+            border: 2px solid #d32f2f;
+            color: #d32f2f;
             border-radius: 25px;
             cursor: pointer;
             font-weight: 500;
@@ -146,7 +166,7 @@
         }
 
         .cat-btn:hover, .cat-btn.active {
-            background: #6a11cb;
+            background: #d32f2f;
             color: white;
         }
 
@@ -156,8 +176,13 @@
             color: #333;
             margin: 2.5rem 0 1.5rem;
             padding-bottom: 10px;
-            border-bottom: 3px solid #6a11cb;
+            border-bottom: 3px solid #d32f2f;
             display: inline-block;
+        }
+
+        .section-title i {
+            color: #d32f2f;
+            margin-right: 10px;
         }
 
         .products-grid {
@@ -203,7 +228,7 @@
         }
 
         .product-price {
-            color: #ff6b6b;
+            color: #d32f2f;
             font-weight: 700;
             font-size: 1.2rem;
             margin-bottom: 10px;
@@ -224,28 +249,28 @@
         }
 
         .tag {
-            background: #e7f3ff;
-            color: #2575fc;
+            background: #ffebee;
+            color: #d32f2f;
             padding: 3px 10px;
             border-radius: 12px;
             font-size: 0.75rem;
             font-weight: 500;
         }
 
-        .tag.sale {
-            background: #ffeaea;
-            color: #ff6b6b;
+        .tag.china {
+            background: #fff3e0;
+            color: #ff9800;
         }
 
-        .tag.new {
-            background: #e7ffea;
-            color: #2ecc71;
+        .tag.direct {
+            background: #e8f5e9;
+            color: #4caf50;
         }
 
         .btn-add-to-cart {
             width: 100%;
             padding: 10px;
-            background: #6a11cb;
+            background: #d32f2f;
             color: white;
             border: none;
             border-radius: 8px;
@@ -255,7 +280,21 @@
         }
 
         .btn-add-to-cart:hover {
-            background: #2575fc;
+            background: #b71c1c;
+        }
+
+        /* China Import Badge */
+        .china-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #d32f2f;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 2;
         }
 
         /* Tables */
@@ -280,13 +319,13 @@
         }
 
         .data-table th {
-            background: #f8f9fa;
-            color: #6a11cb;
+            background: #ffebee;
+            color: #d32f2f;
             font-weight: 600;
         }
 
         .data-table tr:hover {
-            background: #f9f9ff;
+            background: #fff9f9;
         }
 
         /* Footer */
@@ -330,6 +369,15 @@
             font-size: 0.9rem;
         }
 
+        /* Shipping Info */
+        .shipping-info {
+            background: #e8f5e9;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            border-left: 5px solid #4caf50;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .header-content {
@@ -360,17 +408,18 @@
     <header>
         <div class="container header-content">
             <div class="logo">
-                <i class="fas fa-crown"></i>
-                Style<span>Hub</span> BD
+                <i class="fas fa-flag china-flag"></i>
+                CHINA <span>BD</span> DEALS
+                <i class="fas fa-flag bd-flag"></i>
             </div>
             <nav>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#fashion">Fashion</a></li>
-                    <li><a href="#cosmetics">Cosmetics</a></li>
-                    <li><a href="#electronics">Electronics</a></li>
-                    <li><a href="#home-appliances">Home</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#direct-china"><i class="fas fa-shipping-fast"></i> Direct from China</a></li>
+                    <li><a href="#best-deals"><i class="fas fa-tags"></i> Best Deals</a></li>
+                    <li><a href="#how-to-buy"><i class="fas fa-question-circle"></i> How to Buy</a></li>
+                    <li><a href="#track"><i class="fas fa-box"></i> Track Order</a></li>
+                    <li><a href="#contact"><i class="fas fa-headset"></i> Support</a></li>
                 </ul>
             </nav>
         </div>
@@ -379,366 +428,296 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
-            <h1>Premium Shopping Experience in Bangladesh</h1>
-            <p>Discover the latest fashion trends, beauty products, electronics, and home appliances at unbeatable prices. Free delivery across Dhaka, Chittagong, and Sylhet.</p>
-            <a href="#fashion" class="cta-button">Shop Now <i class="fas fa-arrow-right"></i></a>
+            <h1><i class="fas fa-flag china-flag"></i> CHINA PRODUCTS <i class="fas fa-arrow-right"></i> <i class="fas fa-flag bd-flag"></i> BANGLADESH</h1>
+            <p>Import directly from China to Bangladesh at wholesale prices. AliExpress, 1688, Taobao products with Bangladesh delivery.</p>
+            <a href="#direct-china" class="cta-button"><i class="fas fa-shopping-cart"></i> Shop China Deals</a>
         </div>
     </section>
+
+    <!-- Shipping Info -->
+    <div class="container">
+        <div class="shipping-info">
+            <h3><i class="fas fa-shipping-fast"></i> Direct China to Bangladesh Shipping</h3>
+            <p><strong>Delivery Time:</strong> 15-25 days | <strong>Shipping Cost:</strong> Calculated per kg | <strong>Customs Clearance:</strong> We handle everything</p>
+        </div>
+    </div>
 
     <!-- Category Navigation -->
     <div class="category-nav">
         <div class="container">
             <div class="category-buttons">
-                <button class="cat-btn active" onclick="filterProducts('all')">All Products</button>
-                <button class="cat-btn" onclick="filterProducts('fashion')">Fashion</button>
-                <button class="cat-btn" onclick="filterProducts('cosmetics')">Cosmetics</button>
-                <button class="cat-btn" onclick="filterProducts('electronics')">Electronics</button>
-                <button class="cat-btn" onclick="filterProducts('home')">Home & Living</button>
-                <button class="cat-btn" onclick="filterProducts('shoes')">Shoes</button>
+                <button class="cat-btn active" onclick="filterProducts('all')"><i class="fas fa-th-large"></i> All Products</button>
+                <button class="cat-btn" onclick="filterProducts('electronics')"><i class="fas fa-mobile-alt"></i> Electronics</button>
+                <button class="cat-btn" onclick="filterProducts('fashion')"><i class="fas fa-tshirt"></i> Fashion</button>
+                <button class="cat-btn" onclick="filterProducts('home')"><i class="fas fa-home"></i> Home & Kitchen</button>
+                <button class="cat-btn" onclick="filterProducts('auto')"><i class="fas fa-car"></i> Auto Parts</button>
+                <button class="cat-btn" onclick="filterProducts('tools')"><i class="fas fa-tools"></i> Tools</button>
             </div>
         </div>
     </div>
 
     <div class="container">
-        <!-- Fashion Section -->
-        <h2 class="section-title" id="fashion">👗 Trending Fashion in Bangladesh</h2>
-        <div class="products-grid">
-            <div class="product-card" data-category="fashion">
-                <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Traditional Saree" class="product-img">
-                <div class="product-info">
-                    <div class="product-tags">
-                        <span class="tag new">New Arrival</span>
-                        <span class="tag">Premium</span>
-                    </div>
-                    <h3 class="product-title">Jamdani Silk Saree with Zari Work</h3>
-                    <div class="product-price">৳ 3,499 <span class="product-original-price">৳ 5,999</span></div>
-                    <p class="product-desc">Handwoven traditional Bangladeshi saree with premium zari border.</p>
-                    <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
-                </div>
-            </div>
-
-            <div class="product-card" data-category="fashion">
-                <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Men's Kurta" class="product-img">
-                <div class="product-info">
-                    <div class="product-tags">
-                        <span class="tag sale">Eid Sale</span>
-                        <span class="tag">Cotton</span>
-                    </div>
-                    <h3 class="product-title">Men's Premium Cotton Kurta Pajama Set</h3>
-                    <div class="product-price">৳ 1,899 <span class="product-original-price">৳ 2,799</span></div>
-                    <p class="product-desc">Comfortable cotton kurta with matching pajama, perfect for festivals.</p>
-                    <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
-                </div>
-            </div>
-
-            <div class="product-card" data-category="fashion">
-                <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Women's Dress" class="product-img">
-                <div class="product-info">
-                    <div class="product-tags">
-                        <span class="tag new">Trending</span>
-                        <span class="tag">Casual</span>
-                    </div>
-                    <h3 class="product-title">Women's Floral Print Maxi Dress</h3>
-                    <div class="product-price">৳ 1,299 <span class="product-original-price">৳ 2,199</span></div>
-                    <p class="product-desc">Lightweight summer dress with floral pattern, perfect for Bangladeshi weather.</p>
-                    <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
-                </div>
-            </div>
-
-            <div class="product-card" data-category="fashion">
-                <img src="https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Kids Wear" class="product-img">
-                <div class="product-info">
-                    <div class="product-tags">
-                        <span class="tag">Kids</span>
-                        <span class="tag">Comfort</span>
-                    </div>
-                    <h3 class="product-title">Kids Traditional Dress Set with Cap</h3>
-                    <div class="product-price">৳ 999 <span class="product-original-price">৳ 1,599</span></div>
-                    <p class="product-desc">Adorable traditional dress set for children, available in multiple colors.</p>
-                    <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Cosmetics Section -->
-        <h2 class="section-title" id="cosmetics">💄 Premium Cosmetics & Beauty</h2>
-        <div class="products-grid">
-            <div class="product-card" data-category="cosmetics">
-                <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Lipstick" class="product-img">
-                <div class="product-info">
-                    <div class="product-tags">
-                        <span class="tag new">Bestseller</span>
-                        <span class="tag">Matte</span>
-                    </div>
-                    <h3 class="product-title">Matte Liquid Lipstick Set (6 Colors)</h3>
-                    <div class="product-price">৳ 899 <span class="product-original-price">৳ 1,499</span></div>
-                    <p class="product-desc">Long-lasting matte lipstick set with 6 popular shades for Bangladeshi skin tones.</p>
-                    <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
-                </div>
-            </div>
-
-            <div class="product-card" data-category="cosmetics">
-                <img src="https://images.unsplash.com/photo-1556228578-9c360e1d8d34?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Face Cream" class="product-img">
-                <div class="product-info">
-                    <div class="product-tags">
-                        <span class="tag">Whitening</span>
-                        <span class="tag">SPF 30</span>
-                    </div>
-                    <h3 class="product-title">Fairness Cream with SPF 30 & Vitamin C</h3>
-                    <div class="product-price">৳ 649 <span class="product-original-price">৳ 999</span></div>
-                    <p class="product-desc">Daily use fairness cream with sun protection for humid Bangladeshi climate.</p>
-                    <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
-                </div>
-            </div>
-
-            <div class="product-card" data-category="cosmetics">
-                <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Perfume" class="product-img">
-                <div class="product-info">
-                    <div class="product-tags">
-                        <span class="tag new">Luxury</span>
-                        <span class="tag">Long Lasting</span>
-                    </div>
-                    <h3 class="product-title">Premium Attar Perfume Collection (3 Bottles)</h3>
-                    <div class="product-price">৳ 1,299 <span class="product-original-price">৳ 2,299</span></div>
-                    <p class="product-desc">Traditional attar perfumes with floral and musky scents for men and women.</p>
-                    <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
-                </div>
-            </div>
-
-            <div class="product-card" data-category="cosmetics">
-                <img src="https://images.unsplash.com/photo-1591085686350-798c0f9faa7f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Hair Care" class="product-img">
-                <div class="product-info">
-                    <div class="product-tags">
-                        <span class="tag">Hair Care</span>
-                        <span class="tag">Anti-Dandruff</span>
-                    </div>
-                    <h3 class="product-title">Onion Hair Oil & Shampoo Combo Pack</h3>
-                    <div class="product-price">৳ 799 <span class="product-original-price">৳ 1,299</span></div>
-                    <p class="product-desc">Hair growth treatment with onion extract, reduces hair fall and dandruff.</p>
-                    <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Electronics Section -->
-        <h2 class="section-title" id="electronics">📱 Electronics & Gadgets</h2>
+        <!-- Direct from China Section -->
+        <h2 class="section-title" id="direct-china"><i class="fas fa-plane-departure"></i> DIRECT FROM CHINA</h2>
         <div class="products-grid">
             <div class="product-card" data-category="electronics">
-                <img src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Smartphone" class="product-img">
+                <div class="china-badge">China Direct</div>
+                <img src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Xiaomi Phone" class="product-img">
                 <div class="product-info">
                     <div class="product-tags">
-                        <span class="tag new">Latest</span>
-                        <span class="tag">128GB</span>
+                        <span class="tag china">Xiaomi</span>
+                        <span class="tag direct">Direct Import</span>
                     </div>
-                    <h3 class="product-title">Xiaomi Smartphone 8GB RAM 128GB ROM</h3>
-                    <div class="product-price">৳ 22,999 <span class="product-original-price">৳ 28,999</span></div>
-                    <p class="product-desc">48MP camera, 5000mAh battery, perfect for Bangladeshi users.</p>
-                    <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                    <h3 class="product-title">Xiaomi Redmi Note 12 (China Version)</h3>
+                    <div class="product-price">৳ 18,999 <span class="product-original-price">৳ 24,999</span></div>
+                    <p class="product-desc">China version with global ROM, 8GB+128GB, 48MP camera</p>
+                    <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i> Import from China</button>
                 </div>
             </div>
 
             <div class="product-card" data-category="electronics">
+                <div class="china-badge">Shenzhen</div>
                 <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Smart Watch" class="product-img">
                 <div class="product-info">
                     <div class="product-tags">
-                        <span class="tag sale">Sale</span>
-                        <span class="tag">Fitness</span>
+                        <span class="tag china">Huami</span>
+                        <span class="tag">Global Version</span>
                     </div>
-                    <h3 class="product-title">Amazfit Smart Watch with Blood Oxygen Monitor</h3>
-                    <div class="product-price">৳ 4,499 <span class="product-original-price">৳ 6,999</span></div>
-                    <p class="product-desc">Health tracking, sleep monitoring, 10-day battery life.</p>
-                    <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                    <h3 class="product-title">Amazfit GTS 4 Smart Watch (China Import)</h3>
+                    <div class="product-price">৳ 5,499 <span class="product-original-price">৳ 8,999</span></div>
+                    <p class="product-desc">Original from Huami factory, health monitoring, 10-day battery</p>
+                    <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i> Import from China</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="home">
+                <div class="china-badge">Guangzhou</div>
+                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Air Purifier" class="product-img">
+                <div class="product-info">
+                    <div class="product-tags">
+                        <span class="tag china">Xiaomi</span>
+                        <span class="tag direct">Factory Price</span>
+                    </div>
+                    <h3 class="product-title">Xiaomi Air Purifier 3H (China Market)</h3>
+                    <div class="product-price">৳ 9,999 <span class="product-original-price">৳ 14,999</span></div>
+                    <p class="product-desc">Direct from Xiaomi factory, perfect for Dhaka pollution</p>
+                    <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i> Import from China</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="auto">
+                <div class="china-badge">Guangdong</div>
+                <img src="https://images.unsplash.com/photo-1563720223485-8d6d5c5bfc7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Car Parts" class="product-img">
+                <div class="product-info">
+                    <div class="product-tags">
+                        <span class="tag china">Auto Parts</span>
+                        <span class="tag">Wholesale</span>
+                    </div>
+                    <h3 class="product-title">Car LED Headlights (China Factory)</h3>
+                    <div class="product-price">৳ 1,299/pair <span class="product-original-price">৳ 2,499</span></div>
+                    <p class="product-desc">High-power LED headlights for all car models, China factory direct</p>
+                    <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i> Import from China</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Best Deals Section -->
+        <h2 class="section-title" id="best-deals"><i class="fas fa-fire"></i> HOT CHINA DEALS IN BANGLADESH</h2>
+        <div class="products-grid">
+            <div class="product-card" data-category="fashion">
+                <div class="china-badge">Yiwu Market</div>
+                <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Clothing" class="product-img">
+                <div class="product-info">
+                    <div class="product-tags">
+                        <span class="tag china">Wholesale</span>
+                        <span class="tag">100pcs min</span>
+                    </div>
+                    <h3 class="product-title">Men's T-Shirts (China Wholesale Lot)</h3>
+                    <div class="product-price">৳ 199/pc <span class="product-original-price">৳ 399</span></div>
+                    <p class="product-desc">Minimum 100 pieces order, Yiwu market quality, various designs</p>
+                    <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i> Wholesale Order</button>
                 </div>
             </div>
 
             <div class="product-card" data-category="electronics">
+                <div class="china-badge">Shenzhen</div>
                 <img src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Power Bank" class="product-img">
                 <div class="product-info">
                     <div class="product-tags">
-                        <span class="tag">Fast Charging</span>
-                        <span class="tag">20000mAh</span>
+                        <span class="tag china">ROMOSS</span>
+                        <span class="tag direct">Factory Price</span>
                     </div>
-                    <h3 class="product-title">20000mAh Power Bank with 22.5W Fast Charge</h3>
-                    <div class="product-price">৳ 1,899 <span class="product-original-price">৳ 2,899</span></div>
-                    <p class="product-desc">Essential for Bangladesh's frequent power outages, charges 4 devices simultaneously.</p>
-                    <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                    <h3 class="product-title">30000mAh Power Bank (China Export)</h3>
+                    <div class="product-price">৳ 2,199 <span class="product-original-price">৳ 3,499</span></div>
+                    <p class="product-desc">Original ROMOSS power bank, essential for Bangladesh load shedding</p>
+                    <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i> Import from China</button>
                 </div>
             </div>
 
-            <div class="product-card" data-category="electronics">
-                <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Earphones" class="product-img">
+            <div class="product-card" data-category="home">
+                <div class="china-badge">Foshan</div>
+                <img src="https://images.unsplash.com/photo-1625772452859-1c03d5bf1137?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Kitchenware" class="product-img">
                 <div class="product-info">
                     <div class="product-tags">
-                        <span class="tag new">Wireless</span>
-                        <span class="tag">Noise Cancelling</span>
+                        <span class="tag china">Ceramic</span>
+                        <span class="tag">Premium</span>
                     </div>
-                    <h3 class="product-title">Wireless Bluetooth Earphones with ANC</h3>
-                    <div class="product-price">৳ 2,299 <span class="product-original-price">৳ 3,999</span></div>
-                    <p class="product-desc">Active noise cancellation, 30hrs battery, perfect for noisy Bangladeshi streets.</p>
-                    <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                    <h3 class="product-title">Ceramic Dinner Set 56pcs (China Factory)</h3>
+                    <div class="product-price">৳ 4,999 <span class="product-original-price">৳ 8,999</span></div>
+                    <p class="product-desc">High-quality ceramic set from Foshan, China ceramic capital</p>
+                    <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i> Import from China</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="tools">
+                <div class="china-badge">Zhejiang</div>
+                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Tools" class="product-img">
+                <div class="product-info">
+                    <div class="product-tags">
+                        <span class="tag china">Tool Set</span>
+                        <span class="tag">248pcs</span>
+                    </div>
+                    <h3 class="product-title">Professional Tool Kit 248pcs (China)</h3>
+                    <div class="product-price">৳ 6,499 <span class="product-original-price">৳ 9,999</span></div>
+                    <p class="product-desc">Complete professional tool set, perfect for Bangladesh workshops</p>
+                    <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i> Import from China</button>
                 </div>
             </div>
         </div>
 
         <!-- Product Data Table -->
         <div class="table-section">
-            <h2 class="section-title">📊 Product Comparison Table</h2>
+            <h2 class="section-title"><i class="fas fa-table"></i> CHINA IMPORT PRICE COMPARISON</h2>
             <table class="data-table">
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Product Name</th>
-                        <th>Category</th>
-                        <th>Original Price</th>
-                        <th>Discounted Price</th>
-                        <th>Sales</th>
-                        <th>Rating</th>
-                        <th>Tags</th>
+                        <th>Product</th>
+                        <th>China Price (¥)</th>
+                        <th>Bangladesh Price (৳)</th>
+                        <th>You Save</th>
+                        <th>Shipping Time</th>
+                        <th>Origin City</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>1</td>
-                        <td>Jamdani Silk Saree</td>
-                        <td>Fashion</td>
-                        <td>৳ 5,999</td>
-                        <td>৳ 3,499</td>
-                        <td>1,240 sold</td>
-                        <td>4.8 ★</td>
-                        <td>Premium, Traditional</td>
+                        <td>Xiaomi Redmi Note 12</td>
+                        <td>¥1,299</td>
+                        <td>৳ 18,999</td>
+                        <td>৳ 6,000</td>
+                        <td>18-22 days</td>
+                        <td>Beijing</td>
+                        <td><span style="color: #4caf50; font-weight: bold;">In Stock</span></td>
                     </tr>
                     <tr>
-                        <td>2</td>
-                        <td>Men's Cotton Kurta Set</td>
-                        <td>Fashion</td>
-                        <td>৳ 2,799</td>
-                        <td>৳ 1,899</td>
-                        <td>890 sold</td>
-                        <td>4.7 ★</td>
-                        <td>Eid Sale, Cotton</td>
+                        <td>Amazfit GTS 4 Watch</td>
+                        <td>¥499</td>
+                        <td>৳ 5,499</td>
+                        <td>৳ 3,500</td>
+                        <td>15-20 days</td>
+                        <td>Shenzhen</td>
+                        <td><span style="color: #4caf50; font-weight: bold;">In Stock</span></td>
                     </tr>
                     <tr>
-                        <td>3</td>
-                        <td>Matte Lipstick Set</td>
-                        <td>Cosmetics</td>
-                        <td>৳ 1,499</td>
-                        <td>৳ 899</td>
-                        <td>2,150 sold</td>
-                        <td>4.9 ★</td>
-                        <td>Bestseller, Long-lasting</td>
+                        <td>Xiaomi Air Purifier</td>
+                        <td>¥799</td>
+                        <td>৳ 9,999</td>
+                        <td>৳ 5,000</td>
+                        <td>20-25 days</td>
+                        <td>Guangzhou</td>
+                        <td><span style="color: #ff9800; font-weight: bold;">Low Stock</span></td>
                     </tr>
                     <tr>
-                        <td>4</td>
-                        <td>Fairness Cream with SPF</td>
-                        <td>Cosmetics</td>
-                        <td>৳ 999</td>
-                        <td>৳ 649</td>
-                        <td>3,420 sold</td>
-                        <td>4.5 ★</td>
-                        <td>Whitening, SPF 30</td>
+                        <td>Car LED Headlights</td>
+                        <td>¥89/pair</td>
+                        <td>৳ 1,299/pair</td>
+                        <td>৳ 1,200</td>
+                        <td>22-28 days</td>
+                        <td>Guangdong</td>
+                        <td><span style="color: #4caf50; font-weight: bold;">In Stock</span></td>
                     </tr>
                     <tr>
-                        <td>5</td>
-                        <td>Xiaomi Smartphone 128GB</td>
-                        <td>Electronics</td>
-                        <td>৳ 28,999</td>
-                        <td>৳ 22,999</td>
-                        <td>540 sold</td>
-                        <td>4.6 ★</td>
-                        <td>Latest, 48MP Camera</td>
+                        <td>Men's T-Shirts (100pcs)</td>
+                        <td>¥12/pc</td>
+                        <td>৳ 199/pc</td>
+                        <td>৳ 200/pc</td>
+                        <td>25-30 days</td>
+                        <td>Yiwu</td>
+                        <td><span style="color: #4caf50; font-weight: bold;">In Stock</span></td>
                     </tr>
                     <tr>
-                        <td>6</td>
-                        <td>Amazfit Smart Watch</td>
-                        <td>Electronics</td>
-                        <td>৳ 6,999</td>
-                        <td>৳ 4,499</td>
-                        <td>1,120 sold</td>
-                        <td>4.7 ★</td>
-                        <td>Fitness, Health Tracking</td>
-                    </tr>
-                    <tr>
-                        <td>7</td>
-                        <td>20000mAh Power Bank</td>
-                        <td>Electronics</td>
-                        <td>৳ 2,899</td>
-                        <td>৳ 1,899</td>
-                        <td>3,890 sold</td>
-                        <td>4.8 ★</td>
-                        <td>Fast Charging, Essential</td>
-                    </tr>
-                    <tr>
-                        <td>8</td>
-                        <td>Onion Hair Oil Combo</td>
-                        <td>Cosmetics</td>
-                        <td>৳ 1,299</td>
-                        <td>৳ 799</td>
-                        <td>1,750 sold</td>
-                        <td>4.4 ★</td>
-                        <td>Hair Growth, Anti-Dandruff</td>
+                        <td>30000mAh Power Bank</td>
+                        <td>¥159</td>
+                        <td>৳ 2,199</td>
+                        <td>৳ 1,300</td>
+                        <td>15-18 days</td>
+                        <td>Shenzhen</td>
+                        <td><span style="color: #4caf50; font-weight: bold;">In Stock</span></td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <!-- Best Sellers in Bangladesh -->
-        <h2 class="section-title">🔥 Best Sellers in Bangladesh</h2>
-        <div class="products-grid">
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Mosquito Repellent" class="product-img">
-                <div class="product-info">
-                    <div class="product-tags">
-                        <span class="tag sale">Essential</span>
-                        <span class="tag">Mosquito</span>
-                    </div>
-                    <h3 class="product-title">Electric Mosquito Repellent & Killer</h3>
-                    <div class="product-price">৳ 1,099 <span class="product-original-price">৳ 1,799</span></div>
-                    <p class="product-desc">Essential for Bangladeshi homes, protects from dengue and malaria.</p>
-                    <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1625772452859-1c03d5bf1137?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Rice Cooker" class="product-img">
-                <div class="product-info">
-                    <div class="product-tags">
-                        <span class="tag">Kitchen</span>
-                        <span class="tag">Automatic</span>
-                    </div>
-                    <h3 class="product-title">Automatic Rice Cooker 1.8L (Local Use)</h3>
-                    <div class="product-price">৳ 2,499 <span class="product-original-price">৳ 3,299</span></div>
-                    <p class="product-desc">Perfect for Bangladeshi households, cooks rice and steam vegetables.</p>
-                    <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1595341888016-a392ef81b7de?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Prayer Mat" class="product-img">
-                <div class="product-info">
-                    <div class="product-tags">
-                        <span class="tag">Religious</span>
-                        <span class="tag">Premium</span>
-                    </div>
-                    <h3 class="product-title">Premium Islamic Prayer Mat with Compass</h3>
-                    <div class="product-price">৳ 799 <span class="product-original-price">৳ 1,299</span></div>
-                    <p class="product-desc">High-quality prayer mat with direction compass, popular in Bangladesh.</p>
-                    <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Tea Set" class="product-img">
-                <div class="product-info">
-                    <div class="product-tags">
-                        <span class="tag new">Traditional</span>
-                        <span class="tag">Ceramic</span>
-                    </div>
-                    <h3 class="product-title">Bangladeshi Traditional Ceramic Tea Set</h3>
-                    <div class="product-price">৳ 1,599 <span class="product-original-price">৳ 2,199</span></div>
-                    <p class="product-desc">Beautiful hand-painted tea set, perfect for Bangladeshi hospitality.</p>
-                    <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
-                </div>
-            </div>
+        <!-- How to Buy Section -->
+        <div class="table-section" id="how-to-buy">
+            <h2 class="section-title"><i class="fas fa-shopping-cart"></i> HOW TO BUY FROM CHINA</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Step</th>
+                        <th>Process</th>
+                        <th>Time</th>
+                        <th>Cost</th>
+                        <th>Responsibility</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Select products & place order</td>
+                        <td>1-2 days</td>
+                        <td>Product price only</td>
+                        <td>Customer</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>We purchase from China supplier</td>
+                        <td>2-3 days</td>
+                        <td>Included</td>
+                        <td>China BD Deals</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Quality check & packaging</td>
+                        <td>1-2 days</td>
+                        <td>Included</td>
+                        <td>China BD Deals</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Shipping to Bangladesh</td>
+                        <td>15-25 days</td>
+                        <td>৳ 350-500/kg</td>
+                        <td>China BD Deals</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Customs clearance in Bangladesh</td>
+                        <td>2-3 days</td>
+                        <td>Included*</td>
+                        <td>China BD Deals</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Delivery to your address</td>
+                        <td>1-3 days</td>
+                        <td>Depends on location</td>
+                        <td>Courier Service</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="margin-top: 15px; font-size: 0.9em; color: #666;">*Customs duties and taxes may apply based on product category and value</p>
         </div>
     </div>
 
@@ -747,50 +726,51 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>StyleHub BD</h3>
-                    <p>Your premium online shopping destination in Bangladesh. We offer quality products with reliable delivery across the country.</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Gulshan, Dhaka, Bangladesh</p>
-                    <p><i class="fas fa-phone"></i> +880 1711-XXXXXX</p>
-                    <p><i class="fas fa-envelope"></i> support@stylehub-bd.com</p>
+                    <h3><i class="fas fa-flag china-flag"></i> CHINA BD DEALS</h3>
+                    <p>Your bridge between Chinese factories and Bangladeshi consumers. We handle everything from purchase to delivery.</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Office: Gulshan, Dhaka | Warehouse: Yiwu, China</p>
+                    <p><i class="fas fa-phone"></i> BD: +880 1711-XXXXXX | CN: +86 138-XXXX-XXXX</p>
+                    <p><i class="fas fa-envelope"></i> order@chinabddeals.com</p>
                 </div>
                 <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <a href="#home">Home</a>
-                    <a href="#fashion">Fashion</a>
-                    <a href="#cosmetics">Cosmetics</a>
-                    <a href="#electronics">Electronics</a>
-                    <a href="#home-appliances">Home Appliances</a>
-                    <a href="#">Track Order</a>
+                    <h3>China Import Services</h3>
+                    <a href="#">Product Sourcing</a>
+                    <a href="#">Quality Inspection</a>
+                    <a href="#">Shipping & Logistics</a>
+                    <a href="#">Customs Clearance</a>
+                    <a href="#">Wholesale Orders</a>
+                    <a href="#">Price Negotiation</a>
                 </div>
                 <div class="footer-section">
-                    <h3>Customer Service</h3>
-                    <a href="#">FAQ</a>
-                    <a href="#">Shipping Policy</a>
-                    <a href="#">Return & Exchange</a>
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms & Conditions</a>
-                    <a href="#">Contact Us</a>
+                    <h3>Popular China Markets</h3>
+                    <a href="#">Yiwu Market (General)</a>
+                    <a href="#">Shenzhen (Electronics)</a>
+                    <a href="#">Guangzhou (Clothing)</a>
+                    <a href="#">Foshan (Ceramics)</a>
+                    <a href="#">Zhejiang (Hardware)</a>
+                    <a href="#">Shanghai (Fashion)</a>
                 </div>
                 <div class="footer-section">
-                    <h3>Follow Us</h3>
+                    <h3>Connect With Us</h3>
                     <div style="display: flex; gap: 15px; font-size: 1.5rem; margin-top: 10px;">
                         <a href="#" style="color: #3b5998;"><i class="fab fa-facebook"></i></a>
                         <a href="#" style="color: #1DA1F2;"><i class="fab fa-twitter"></i></a>
                         <a href="#" style="color: #E1306C;"><i class="fab fa-instagram"></i></a>
                         <a href="#" style="color: #FF0000;"><i class="fab fa-youtube"></i></a>
-                        <a href="#" style="color: #25D366;"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" style="color: #0088cc;"><i class="fab fa-telegram"></i></a>
                     </div>
-                    <p style="margin-top: 20px;">Payment Methods:</p>
+                    <p style="margin-top: 20px;">We Accept:</p>
                     <div style="display: flex; gap: 10px; font-size: 1.8rem;">
                         <i class="fab fa-cc-visa" style="color: #1a1f71;"></i>
                         <i class="fab fa-cc-mastercard" style="color: #eb001b;"></i>
                         <i class="fab fa-cc-paypal" style="color: #003087;"></i>
                         <i class="fas fa-money-bill-wave" style="color: #28a745;"></i>
+                        <i class="fas fa-university" style="color: #4caf50;"></i>
                     </div>
                 </div>
             </div>
             <div class="copyright">
-                &copy; 2023 StyleHub BD. All rights reserved. | Designed for Bangladesh Market
+                &copy; 2023 CHINA BD DEALS. All rights reserved. | China Import Service for Bangladesh
             </div>
         </div>
     </footer>
@@ -825,16 +805,18 @@
         document.querySelectorAll('.btn-add-to-cart').forEach(button => {
             button.addEventListener('click', function() {
                 const productTitle = this.closest('.product-card').querySelector('.product-title').textContent;
-                alert(`"${productTitle}" has been added to your cart!`);
+                const chinaBadge = this.closest('.product-card').querySelector('.china-badge').textContent;
+                
+                alert(`🇨🇳 Order from ${chinaBadge}: "${productTitle}"\n\nWe will contact you within 24 hours to confirm your China import order.`);
                 
                 // Add animation
-                this.innerHTML = '<i class="fas fa-check"></i> Added!';
-                this.style.background = '#2ecc71';
+                this.innerHTML = '<i class="fas fa-check"></i> Order Placed!';
+                this.style.background = '#4caf50';
                 
                 setTimeout(() => {
-                    this.innerHTML = '<i class="fas fa-shopping-cart"></i> Add to Cart';
-                    this.style.background = '#6a11cb';
-                }, 2000);
+                    this.innerHTML = '<i class="fas fa-shopping-cart"></i> Import from China';
+                    this.style.background = '#d32f2f';
+                }, 3000);
             });
         });
 
@@ -845,10 +827,12 @@
                 const targetId = this.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
                 
-                window.scrollTo({
-                    top: targetElement.offsetTop - 100,
-                    behavior: 'smooth'
-                });
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
             });
         });
     </script>
